@@ -4,7 +4,7 @@ import "./globals.css";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
-  weight: "100 900",
+  weight: " 900",
 });
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
@@ -21,10 +21,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Ubah max-w mx-auto p-4 menjadi w-full h-full tanpa padding */}
+        <main className="w-full h-full"> 
+          {children}
+        </main>
       </body>
     </html>
   );
 }
+
