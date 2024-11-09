@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Services = () => {
   return (
-    <div className="bg-[#262222] py-16 px-4 rounded-2xl" id="services">
+    <div className="bg-[#262222] py-16 px-4 rounded-sm" id="services">
       <div className="flex flex-col md:flex-row items-start justify-between max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-8">
         <div className="w-full md:w-1/2 flex flex-col">
           <Image
