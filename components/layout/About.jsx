@@ -23,7 +23,7 @@ export default function About() {
     <section id="about" className="bg-[#262222] text-white py-20 mb-10 rounded-sm"> 
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
-          <h2 className="text-2xl font-bold mb-4 text-[#E6A069]">Tentang Domang Sushi</h2>
+          <h2 className="text-xl font-bold mb-4 text-[#E6A069]">Tentang Domang Sushi</h2>
           <p className="mb-6">
             Domang Sushi lahir dari kecintaan kami terhadap cita rasa Jepang yang autentik,
             berpadu dengan pesona tradisi Bali. Terinspirasi oleh kekayaan budaya kedua tempat ini,

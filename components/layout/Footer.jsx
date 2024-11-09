@@ -21,7 +21,7 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    <div>
+                    <div className="pl-10">
                         <h3 className="text-black text-xl font-semibold mb-4">Company</h3>
                         <ul className="space-y-2 text-gray-600">
                             <li>
@@ -36,7 +36,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div>
+                    <div className="pl-10">
                         <h3 className="text-black text-xl font-semibold mb-4">Sushi</h3>
                         <ul className="space-y-2 text-gray-600">
                             <li>
@@ -78,13 +78,13 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div>
+                    <div className="pl-10">
                         <h3 className="text-black text-xl font-semibold mb-4">Contact Us</h3>
                         <div className="flex space-x-4">
-                            <Link href="https://www.instagram.com" target="_blank" className="hover:opacity-80">
+                            <Link href="https://www.instagram.com/domang_sushi/" target="_blank" className="hover:opacity-80">
                                 <i className="text-[#C13584] text-2xl ion-logo-instagram"></i>
                             </Link>
-                            <Link href="https://wa.me/123456789" target="_blank" className="hover:opacity-80">
+                            <Link href="https://wa.me/+6281353997347" target="_blank" className="hover:opacity-80">
                                 <i className="text-[#25D366] text-2xl ion-logo-whatsapp"></i>
                             </Link>
                         </div>

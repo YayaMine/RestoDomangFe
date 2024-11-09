@@ -11,7 +11,7 @@ export default function MenuItem({ name, price, imageSrc }) {
           className="border p-1 bg-white rounded-2xl mx-auto mb-4"
         />
         <h3 className="text-lg font-bold">{name}</h3>
-        <p className="text-gray-600">Rp {price.toLocaleString()}</p>
+        <p className="text-white">Rp {price.toLocaleString()}</p>
       </div>
     );
   }
