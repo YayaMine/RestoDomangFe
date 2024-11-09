@@ -1,23 +1,33 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function About() {
+  const [isClient, setIsClient] = useState(false);
+
   useEffect(() => {
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"; 
-    link.onload = () => {
-      console.log("Ionicons CSS loaded");
-    };
-    document.head.appendChild(link);
+    setIsClient(true); // Set to true after rendering on the client side
+
+    const linkId = "ionicons-stylesheet";
+    if (!document.getElementById(linkId)) {
+      const link = document.createElement("link");
+      link.id = linkId;
+      link.rel = "stylesheet";
+      link.href = "https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css";
+      document.head.appendChild(link);
+    }
 
     return () => {
-      document.head.removeChild(link);
+      const linkElement = document.getElementById(linkId);
+      if (linkElement) {
+        document.head.removeChild(linkElement);
+      }
     };
   }, []);
+
+  if (!isClient) return null; // Return null on server-side rendering
 
   return (
     <section id="about" className="bg-[#262222] text-white py-20 mb-10 rounded-sm"> 

@@ -1,33 +1,50 @@
 "use client";
 import Image from "next/image";
-import Link from 'next/link';
+import Link from "next/link";
 import { Search } from "lucide-react";
-import { useEffect } from 'react';
-import jQuery from 'jquery';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import 'slick-carousel'
+import { useEffect } from "react";
+import jQuery from "jquery";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel";
 
 export default function Hero() {
   useEffect(() => {
     const $ = jQuery;
-    $('.slider').slick({
-      dots: false,
-      infinite: true,
-      speed: 500,
-      fade: true,
-      cssEase: 'linear',
-      autoplay: true,
-      autoplaySpeed: 2500,
-    });
 
-    
+    const initSlick = () => {
+      if ($('.slider').length > 0) {
+        $('.slider').slick({
+          dots: false,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: 'linear',
+          autoplay: true,
+          autoplaySpeed: 2500,
+        });
+      }
+    };
+
+    // Tunggu hingga DOM benar-benar siap
+    setTimeout(initSlick, 100);
+
+    return () => {
+      // Pastikan untuk membersihkan instance Slick saat komponen di-unmount
+      if ($('.slider').hasClass('slick-initialized')) {
+        $('.slider').slick('unslick');
+      }
+    };
   }, []);
 
   return (
-    <section className="relative h-screen bg-cover bg-center" id="hero" style={{ backgroundImage: "url('/sushi2.png')" }}> 
+    <section
+      className="relative h-screen bg-cover bg-center"
+      id="hero"
+      style={{ backgroundImage: "url('/sushi2.png')" }}
+    >
       <div className="absolute inset-0 bg-black/60 z-10"></div>
-      
+
       <div className="relative z-20 h-full max-w-7xl mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full items-center gap-8">
           <div className="flex flex-col items-start justify-center space-y-6">
@@ -37,12 +54,12 @@ export default function Hero() {
               Terbaik Di Bali
             </h1>
             <p className="text-gray-300 text-lg max-w-xl">
-              Nikmati Pengalaman Kuliner Jepang Autentik Dengan Sentuhan
-              Modern Di Domang Sushi.
+              Nikmati Pengalaman Kuliner Jepang Autentik Dengan Sentuhan Modern Di
+              Domang Sushi.
             </p>
-            
-            <Link 
-              href="#reservation" 
+
+            <Link
+              href="#reservation"
               className="bg-[#C06014] text-white text-base font-semibold py-3 px-8 rounded-full hover:bg-[#AD4C10] transition duration-300"
             >
               Make a Reservation

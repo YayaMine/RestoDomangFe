@@ -1,14 +1,27 @@
 "use client";
 import Link from 'next/link';
 import Image from 'next/image';
+import React, { useCallback, useEffect, useState } from 'react';
 
 export default function Footer() {
-    const smoothScroll = (e, targetId) => {
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        // Set isClient ke true saat komponen dirender di sisi client
+        setIsClient(true);
+    }, []);
+
+    const smoothScroll = useCallback((e, targetId) => {
         e.preventDefault();
-        document.getElementById(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
-    };
+        if (isClient) {
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }, [isClient]);
 
     return (
         <footer className="bg-white text-black py-12">

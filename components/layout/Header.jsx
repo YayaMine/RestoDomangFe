@@ -1,23 +1,30 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from 'react';
 import Link from 'next/link';
+import React, { useCallback, useEffect, useState } from 'react';
 
 export default function Header() {
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
-  const toggleBooking = () => {
-    setIsBookingOpen(!isBookingOpen);
-  };
+  useEffect(() => {
+    // Menandakan bahwa komponen ini berjalan di sisi client
+    setIsClient(true);
+  }, []);
 
-  const smoothScroll = (targetId) => {
-    document.getElementById(targetId).scrollIntoView({
-      behavior: 'smooth',
-    });
-  };
+  const smoothScroll = useCallback((targetId) => {
+    // Pastikan smoothScroll hanya berjalan di sisi client
+    if (isClient) {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+        });
+      }
+    }
+  }, [isClient]);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 shadow-md~ text-sm">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 shadow-md text-sm">
       <div className="max-w-6xl mx-auto px-4 flex justify-between items-center py-4">
         <Link href="/">
           <div className="flex items-center space-x-2">
@@ -92,28 +99,13 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-        <button
-          onClick={toggleBooking}
+        <Link
+          href="/member"
           className="ml-auto bg-white text-[#C06014] py-2 px-6 rounded-full hover:bg-[#AD4C10] focus:outline-none text-base"
         >
           Member
-        </button>
+        </Link>
       </div>
-
-      {isBookingOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-8 rounded-lg shadow-lg max-w-md relative">
-            <h2 className="text-2xl font-bold mb-4">Book a Table</h2>
-            <p className="text-gray-600 mb-4">This is a placeholder for booking form.</p>
-            <button
-              onClick={toggleBooking}
-              className="bg-[#C06014] text-white py-2 px-4 rounded-lg hover:bg-[#AD4C10] focus:outline-none"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
     </header>
   );
 }
