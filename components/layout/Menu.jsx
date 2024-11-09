@@ -19,10 +19,10 @@ export default function Menu() {
         <div className="hidden md:block h-80 border-l-4 border-black">
         </div>
         <div className="md:w-1/2 text-center md:text-left">
-          <h1 className="text-4xl font-bold mb-4">
+          <h1 className="text-3xl font-bold mb-4">
             Sensasi Sushi dengan Sentuhan Bali di <span className="text-[#FF7100]">Domang Sushi</span>
           </h1>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-base text-gray-700 mb-6">
             Domang Sushi Bali menyajikan sushi autentik dengan sentuhan khas Bali, menggunakan bahan segar berkualitas tinggi untuk menghadirkan cita rasa Jepang yang otentik di tengah keindahan pulau dewata.
           </p>
           <button className="bg-[#FF7100] text-white px-4 py-2 rounded-lg font-bold shadow hover:bg-orange-500">

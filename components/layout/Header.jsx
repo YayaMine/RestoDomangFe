@@ -17,12 +17,12 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 shadow-md~">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 shadow-md~ text-sm">
       <div className="max-w-6xl mx-auto px-4 flex justify-between items-center py-4">
         <Link href="/">
           <div className="flex items-center space-x-2">
             <Image src="/newlogo.png" alt="Logo" width={60} height={64} />
-            <h1 className="text-2xl font-bold">
+            <h1 className="text-base font-bold">
               <span style={{ color: "#FF7100" }}>DOMANG</span>{" "}
               <span className="text-white">SUSHI</span>
             </h1>
@@ -94,7 +94,7 @@ export default function Header() {
         </nav>
         <button
           onClick={toggleBooking}
-          className="ml-auto bg-white text-[#C06014] py-2 px-6 rounded-full hover:bg-[#AD4C10] focus:outline-none"
+          className="ml-auto bg-white text-[#C06014] py-2 px-6 rounded-full hover:bg-[#AD4C10] focus:outline-none text-base"
         >
           Member
         </button>

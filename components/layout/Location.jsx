@@ -10,7 +10,7 @@ export default function Location() {
       </div>
 
       <div className="w-1/2">
-        <h2 className="text-3xl font-bold text-black mb-4">Cabang Ungasan</h2>
+        <h2 className="text-xl font-bold text-black mb-4">Cabang Ungasan</h2>
         <p className="text-lg text-[#C06014] mb-2">
           Jl. Kampus Bukit, Jimbaran, South Kuta, Bali
         </p>

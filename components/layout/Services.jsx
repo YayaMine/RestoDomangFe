@@ -14,7 +14,7 @@ const Services = () => {
             className="w-full h-auto rounded-lg mb-4"
           />
           <div className="space-y-4 flex flex-col flex-grow">
-            <h2 className="text-3xl font-bold text-white">Booking Table Service</h2>
+            <h2 className="text-xl font-bold text-white">Booking Table Service</h2>
             <p className="text-gray-300 flex-grow">
             Pesan Meja Sekarang, Nikmati Makan Tanpa Khawatir!
             Cukup pilih waktu dan jumlah orang, dan kami akan memastikan meja Anda siap saat Anda tiba. Rasakan pengalaman makan yang lebih santai dengan layanan reservasi kami.
@@ -33,7 +33,7 @@ const Services = () => {
             className="w-full h-auto rounded-lg mb-4"
           />
           <div className="space-y-4 flex flex-col flex-grow">
-            <h2 className="text-3xl font-bold text-white">Booking Event Service</h2>
+            <h2 className="text-xl font-bold text-white">Booking Event Service</h2>
             <p className="text-gray-300 flex-grow">
             Buat Acara Anda Tak Terlupakan dengan Layanan Pemesanan Acara Kami!
             Apakah Anda merencanakan pesta pribadi, acara korporat, atau perayaan spesial? Kami siap membantu Anda mengatur acara yang luar biasa.

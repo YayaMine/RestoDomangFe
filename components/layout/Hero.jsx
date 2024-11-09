@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="relative z-20 h-full max-w-7xl mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full items-center gap-8">
           <div className="flex flex-col items-start justify-center space-y-6">
-            <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <h1 className="text-4xl lg:text-3xl font-bold text-white leading-tight">
               Kelezatan Rasa Sushi
               <br />
               Terbaik Di Bali
@@ -44,7 +44,7 @@ export default function Hero() {
             
             <Link 
               href="#reservation" 
-              className="bg-[#C06014] text-white font-semibold py-3 px-8 rounded-full hover:bg-[#AD4C10] transition duration-300"
+              className="bg-[#C06014] text-white text-base font-semibold py-3 px-8 rounded-full hover:bg-[#AD4C10] transition duration-300"
             >
               Make a Reservation
             </Link>
