@@ -7,7 +7,6 @@ export default function Footer() {
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
-        // Set isClient ke true saat komponen dirender di sisi client
         setIsClient(true);
     }, []);
 

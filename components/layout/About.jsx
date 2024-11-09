@@ -27,7 +27,7 @@ export default function About() {
     };
   }, []);
 
-  if (!isClient) return null; // Return null on server-side rendering
+  if (!isClient) return null; 
 
   return (
     <section id="about" className="bg-[#262222] text-white py-20 mb-10 rounded-sm"> 

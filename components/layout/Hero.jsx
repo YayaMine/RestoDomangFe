@@ -26,11 +26,9 @@ export default function Hero() {
       }
     };
 
-    // Tunggu hingga DOM benar-benar siap
     setTimeout(initSlick, 100);
 
     return () => {
-      // Pastikan untuk membersihkan instance Slick saat komponen di-unmount
       if ($('.slider').hasClass('slick-initialized')) {
         $('.slider').slick('unslick');
       }

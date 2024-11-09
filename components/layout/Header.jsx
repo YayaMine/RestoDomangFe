@@ -7,12 +7,10 @@ export default function Header() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // Menandakan bahwa komponen ini berjalan di sisi client
     setIsClient(true);
   }, []);
 
   const smoothScroll = useCallback((targetId) => {
-    // Pastikan smoothScroll hanya berjalan di sisi client
     if (isClient) {
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
