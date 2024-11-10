@@ -8,7 +8,7 @@ export default function About() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true); // Set to true after rendering on the client side
+    setIsClient(true); 
 
     const linkId = "ionicons-stylesheet";
     if (!document.getElementById(linkId)) {

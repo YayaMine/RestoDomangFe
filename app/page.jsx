@@ -4,6 +4,7 @@ import Menu from "@/components/layout/Menu";
 import About from "@/components/layout/About";
 import Services from "@/components/layout/Services";
 import Location from "@/components/layout/Location";
+import Review from "@/components/layout/Review";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <About />
       <Services />
       <Location />
+      <Review />
       <Footer />
     </>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import MenuItem from './MenuItem';
+import Link from 'next/link';
 
 export default function Menu() {
 
@@ -25,9 +26,9 @@ export default function Menu() {
           <p className="text-base text-gray-700 mb-6">
             Domang Sushi Bali menyajikan sushi autentik dengan sentuhan khas Bali, menggunakan bahan segar berkualitas tinggi untuk menghadirkan cita rasa Jepang yang otentik di tengah keindahan pulau dewata.
           </p>
-          <button className="bg-[#FF7100] text-white px-4 py-2 rounded-lg font-bold shadow hover:bg-orange-500">
+          <Link href="/menu" className="bg-[#FF7100] text-white px-4 py-2 rounded-lg font-bold shadow hover:bg-orange-500">
             Lihat Menu
-          </button>
+          </Link>
         </div>
       </div>
 

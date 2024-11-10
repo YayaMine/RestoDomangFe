@@ -13,25 +13,26 @@ export default function Hero() {
     const $ = jQuery;
 
     const initSlick = () => {
-      if ($('.slider').length > 0) {
-        $('.slider').slick({
+      if ($ && typeof $(".slider").slick === "function" && $(".slider").length > 0) {
+        $(".slider").slick({
           dots: false,
           infinite: true,
           speed: 500,
           fade: true,
-          cssEase: 'linear',
+          cssEase: "linear",
           autoplay: true,
           autoplaySpeed: 2500,
         });
       }
     };
 
-    setTimeout(initSlick, 100);
+    const timer = setTimeout(initSlick, 100);
 
     return () => {
-      if ($('.slider').hasClass('slick-initialized')) {
-        $('.slider').slick('unslick');
+      if ($(".slider").hasClass("slick-initialized")) {
+        $(".slider").slick("unslick");
       }
+      clearTimeout(timer); 
     };
   }, []);
 
