@@ -38,21 +38,21 @@ export default function Hero() {
 
   return (
     <section
-      className="relative h-screen bg-cover bg-center"
+      className="relative h-screen bg-center bg-cover"
       id="hero"
       style={{ backgroundImage: "url('/sushi2.png')" }}
     >
-      <div className="absolute inset-0 bg-black/60 z-10"></div>
+      <div className="absolute inset-0 z-10 bg-black/60"></div>
 
-      <div className="relative z-20 h-full max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 h-full items-center gap-8">
+      <div className="relative z-20 h-full px-4 mx-auto max-w-7xl lg:px-8">
+        <div className="grid items-center h-full grid-cols-1 gap-8 lg:grid-cols-2">
           <div className="flex flex-col items-start justify-center space-y-6">
-            <h1 className="text-4xl lg:text-3xl font-bold text-white leading-tight">
+            <h1 className="text-4xl font-bold leading-tight text-white lg:text-3xl">
               Kelezatan Rasa Sushi
               <br />
               Terbaik Di Bali
             </h1>
-            <p className="text-gray-300 text-lg max-w-xl">
+            <p className="max-w-xl text-lg text-gray-300">
               Nikmati Pengalaman Kuliner Jepang Autentik Dengan Sentuhan Modern Di
               Domang Sushi.
             </p>
