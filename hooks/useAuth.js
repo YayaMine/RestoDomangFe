@@ -18,7 +18,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
                 if (error.response?.status === 401) {
                     if (middleware === 'auth') {
                         localStorage.removeItem('token'); // Hapus token jika tidak valid
-                        router.push('/login'); // Redirect ke halaman login
+                        router.push('/'); // Redirect ke halaman login
                     }
                 }
                 throw error;
@@ -30,18 +30,17 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
 
     // Middleware berbasis role
     useSWR('/role-check', () => {
-        if (middleware === 'auth') {
-            if (!user) {
-                router.push('/login');
-            } else if (middleware === 'admin' && user.role !== 'admin') {
-                router.push('/admin');
-            } else if (redirectIfAuthenticated && user) {
+        if (middleware) {
+            if (middleware === 'auth' && !user) {
                 router.push('/');
+            } else if (middleware === 'admin' && user && user.role !== 'admin') {
+                router.push('/admin'); // Redirect jika bukan admin
+            } else if (redirectIfAuthenticated && user) {
+                router.push('/'); // Redirect jika sudah login dan middleware guest
             }
         }
     });
 
-    
     // Fungsi untuk login user
     const login = async ({ setErrors, ...props }) => {
         await csrf();
@@ -87,7 +86,6 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
 
     return {
         user, // Data user yang sedang login
-    
         login, // Fungsi untuk login user
         logout, // Fungsi untuk logout user
     };
