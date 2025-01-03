@@ -135,7 +135,7 @@ const RegisterPage = () => {
                         {/* Tambahkan tombol kembali ke login */}
                         <div className="my-4"></div>
                         <button
-                            onClick={() => router.push("/memberLogin")}
+                            onClick={() => router.push("/member")}
                             className="w-full py-3 font-semibold text-white transition duration-200 bg-gray-400 rounded-lg hover:bg-gray-500"
                         >
                             Kembali ke Login

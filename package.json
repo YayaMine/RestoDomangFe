@@ -16,7 +16,7 @@
     "react": "^18",
     "react-dom": "^18",
     "slick-carousel": "^1.8.1",
-    "sweetalert2": "^11.6.13",
+    "sweetalert2": "^11.15.9",
     "swr": "^2.3.0"
   },
   "devDependencies": {

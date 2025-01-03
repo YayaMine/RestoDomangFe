@@ -32,7 +32,7 @@ export const useRegister = () => {
                     timer: 1500,
                 });
 
-                router.push('/'); // Redirect ke halaman utama setelah berhasil
+                router.push('/member'); // Redirect ke halaman utama setelah berhasil
             })
             .catch((error) => {
                 if (error.response?.status === 422) {
