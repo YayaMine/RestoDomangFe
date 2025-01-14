@@ -1,12 +1,18 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; // Untuk navigasi halaman
 import Swal from "sweetalert2";
-import { useRegister } from "@/hooks/useRegister"; // Gunakan hook useAuth
-
+import { useRegister } from "@/hooks/useRegister"; // Gunakan hook useRegister
+import Image from "next/image";
 
 const RegisterPage = () => {
-    const [form, setForm] = useState({ name: "", email: "", password: "", confirmPassword: "" });
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+    });
     const router = useRouter();
     const { register, errors } = useRegister(); // Gunakan fungsi register dari useRegister
 
@@ -51,7 +57,7 @@ const RegisterPage = () => {
                 timer: 1500,
             });
 
-            router.replace("/"); // Redirect ke halaman utama setelah berhasil registrasi
+            router.replace("/member"); // Redirect ke halaman login setelah berhasil registrasi
         } catch (error) {
             Swal.fire({
                 icon: "error",
@@ -60,13 +66,28 @@ const RegisterPage = () => {
             });
         }
     };
-
+    const handleHome = () => {
+        router.push("/#Hero"); // Arahkan user ke halaman hero
+    };
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-800">
             <div className="flex w-3/4 max-w-5xl overflow-hidden shadow-lg">
                 <div className="flex flex-col items-center justify-center w-1/2 p-12 bg-white">
+                    <Image
+                        src="/newlogo.png"
+                        alt="Logo"
+                        width={300}
+                        height={300}
+                        className="mb-4"
+                    />
                     <h2 className="mt-6 text-3xl font-bold">Daftar Akun</h2>
                     <p className="mt-2 text-gray-600">Buat akun baru Anda</p>
+                    <button
+                        onClick={handleHome}
+                        className="mt-6 bg-[#C06014] text-white font-semibold py-2 px-6 rounded-lg hover:bg-[#AD4C10] transition duration-300"
+                    >
+                        HOME
+                    </button>
                 </div>
                 <div className="flex flex-col items-center justify-center w-1/2 p-12 text-white bg-gray-700">
                     <h2 className="mb-4 text-3xl font-bold">Register</h2>

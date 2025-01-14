@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; // Untuk navigasi halaman
 import Swal from "sweetalert2";
 import { useAuth } from "@/hooks/useAuth"; // Gunakan hook useAuth
+import Image from "next/image";
 
 const MemberPage = () => {
     const [form, setForm] = useState({ email: "", password: "" });
@@ -74,12 +75,29 @@ const MemberPage = () => {
         router.push("/memberRegister"); // Arahkan user ke halaman register
     };
 
+    const handleHome = () => {
+        router.push("/#Hero"); // Arahkan user ke halaman hero
+    };
+
     return user ? null : (
         <div className="flex items-center justify-center min-h-screen bg-gray-800">
-            <div className="flex w-3/4 max-w-5xl overflow-hidden shadow-lg">
+            <div className="flex max-w-5xl overflow-hidden shadow-lg w-5/4">
                 <div className="flex flex-col items-center justify-center w-1/2 p-12 bg-white">
+                    <Image
+                        src="/newlogo.png"
+                        alt="Logo"
+                        width={200}
+                        height={200}
+                        className="mb-4"
+                    />
                     <h2 className="mt-6 text-3xl font-bold">Selamat Datang</h2>
                     <p className="mt-2 text-gray-600">Silahkan Login Terlebih Dahulu</p>
+                    <button
+                        onClick={handleHome}
+                        className="mt-6 bg-[#C06014] text-white font-semibold py-2 px-6 rounded-lg hover:bg-[#AD4C10] transition duration-300"
+                    >
+                        HOME
+                    </button>
                 </div>
                 <div className="flex flex-col items-center justify-center w-1/2 p-12 text-white bg-gray-700">
                     <h2 className="mb-4 text-3xl font-bold">Sign In</h2>
