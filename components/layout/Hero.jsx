@@ -3,12 +3,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { Search } from "lucide-react";
 import { useEffect } from "react";
+import { useAuth } from "@/hooks/useAuth";
+import { useRouter } from "next/navigation";
 import jQuery from "jquery";
+import Swal from "sweetalert2";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel";
 
 export default function Hero() {
+  const { user } = useAuth(); // Periksa status login
+  const router = useRouter(); // Router untuk navigasi
+
   useEffect(() => {
     const $ = jQuery;
 
@@ -32,9 +38,27 @@ export default function Hero() {
       if ($(".slider").hasClass("slick-initialized")) {
         $(".slider").slick("unslick");
       }
-      clearTimeout(timer); 
+      clearTimeout(timer);
     };
   }, []);
+
+  const handleReservation = () => {
+    if (!user) {
+      Swal.fire({
+        icon: "info",
+        title: "Login Required",
+        text: "You need to log in before making a reservation.",
+        confirmButtonText: "Login",
+        confirmButtonColor: "#C06014",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          router.push("/member"); // Arahkan ke halaman login
+        }
+      });
+    } else {
+      router.push("/userReservasi"); // Arahkan ke halaman reservasi jika sudah login
+    }
+  };
 
   return (
     <section
@@ -57,12 +81,12 @@ export default function Hero() {
               Domang Sushi.
             </p>
 
-            <Link
-              href="#reservation"
+            <button
+              onClick={handleReservation}
               className="bg-[#C06014] text-white text-base font-semibold py-3 px-8 rounded-full hover:bg-[#AD4C10] transition duration-300"
             >
               Make a Reservation
-            </Link>
+            </button>
 
             <div className="relative w-full max-w-md mt-4">
               <input

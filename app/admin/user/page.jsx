@@ -148,14 +148,14 @@ const handleDelete = async (id) => {
             height={64}
             className="mx-auto mb-2"
           />
-          <h1 className="text-xl font-bold text-orange-600">DOMANG SUSHI</h1>
+          <h1 className="text-xl font-bold text-gray-700">DOMANG SUSHI</h1>
         </div>
         <nav className="mt-6">
           <ul>
             <li className="mb-2">
               <Link
                 href="/admin"
-                className="flex items-center px-4 py-2 text-gray-700 rounded-md hover:bg-orange-100"
+                className="flex items-center px-4 py-2 text-gray-700 rounded-md hover:bg-gray-200"
               >
                 <Home className="w-5 h-5 mr-2" />
                 Dashboard
@@ -164,22 +164,22 @@ const handleDelete = async (id) => {
             <li className="mb-2">
               <Link
                 href="/admin/menu"
-                className="flex items-center px-4 py-2 text-gray-700 rounded-md hover:bg-orange-100"
+                className="flex items-center px-4 py-2 text-gray-700 rounded-md hover:bg-gray-200"
               >
                 <List className="w-5 h-5 mr-2" />
                 Menus
               </Link>
             </li>
-            <li>
+            <li className="mb-2">
               <Link
                 href="/admin/reservasi"
-                className="flex items-center px-4 py-2 text-gray-700 rounded-md hover:bg-orange-100"
+                className="flex items-center px-4 py-2 text-gray-700 rounded-md hover:bg-gray-200"
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 Reservation
               </Link>
             </li>
-            <li>
+            <li className="mb-2">
               <Link
                 href="/admin/tableReservation"
                 className="flex items-center px-4 py-2 text-gray-700 rounded-md hover:bg-gray-200"
@@ -188,10 +188,10 @@ const handleDelete = async (id) => {
                 Table
               </Link>
             </li>
-            <li>
+            <li className="mb-4">
               <Link
                 href="/admin/user"
-                className="flex items-center px-4 py-2 text-white bg-orange-500 rounded-md"
+                className="flex items-center px-4 py-2 text-white bg-orange-500 rounded-md py-2px-4"
               >
                 <User className="w-5 h-5 mr-2" />
                 User
@@ -200,7 +200,7 @@ const handleDelete = async (id) => {
             <li>
               <button
                 onClick={handleLogout}
-                className="flex items-center w-full px-4 py-2 mt-4 text-gray-700 rounded-md hover:bg-orange-100"
+                className="flex items-center w-full px-4 py-2 text-gray-700 rounded-md hover:bg-gray-200"
               >
                 <LogOut className="w-5 h-5 mr-2" />
                 Logout
